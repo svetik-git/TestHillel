@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "fae96dbd-2ac3-42b6-afb9-20ef97698f13",
+		"name": "Centredo1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test2602",
+			"item": [
+				{
+					"name": "Authorization Centredo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9f7580c9-7df1-496b-9ab8-fb410346d855",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"Svetik.firefly6@gmail.com\",\n    \"password\": \"umNLa63XL5DjBR2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.centredo.com/api/login",
+							"protocol": "https",
+							"host": [
+								"api",
+								"centredo",
+								"com"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update profile First name",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authority",
+								"value": "api.centredo.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer ae33e24b-600d-4f68-b393-ccb1d382522d"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "mailbox",
+								"value": "40bf90da-de5b-4f7f-a69a-ed88161d142b"
+							},
+							{
+								"key": "origin",
+								"value": "https://app.centredo.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://app.centredo.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"108\", \"Google Chrome\";v=\"108\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Svitlana1\",\n    \"lastName\": \"Kozina\",\n    \"locale\": \"en\",\n    \"timezone\": \"Europe/Prague\",\n    \"phone\": \"+380507752456\",\n    \"autoDepositMailboxUuid\": \"40bf90da-de5b-4f7f-a69a-ed88161d142b\",\n    \"displayExactDate\": true,\n    \"dateLocale\": \"uk_UA\",\n    \"avatar\": null\n}"
+						},
+						"url": {
+							"raw": "https://api.centredo.com/api/v1/user/profile",
+							"protocol": "https",
+							"host": [
+								"api",
+								"centredo",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Last name",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authority",
+								"value": "api.centredo.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer ae33e24b-600d-4f68-b393-ccb1d382522d"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "mailbox",
+								"value": "40bf90da-de5b-4f7f-a69a-ed88161d142b"
+							},
+							{
+								"key": "origin",
+								"value": "https://app.centredo.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://app.centredo.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"108\", \"Google Chrome\";v=\"108\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Svitlana1\",\n    \"lastName\": \"Kozina1\",\n    \"locale\": \"en\",\n    \"timezone\": \"Europe/Prague\",\n    \"phone\": \"+380507752456\",\n    \"autoDepositMailboxUuid\": \"40bf90da-de5b-4f7f-a69a-ed88161d142b\",\n    \"displayExactDate\": true,\n    \"dateLocale\": \"uk_UA\",\n    \"avatar\": null\n}"
+						},
+						"url": {
+							"raw": "https://api.centredo.com/api/v1/user/profile",
+							"protocol": "https",
+							"host": [
+								"api",
+								"centredo",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update dateLocale",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authority",
+								"value": "api.centredo.com"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en"
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer ae33e24b-600d-4f68-b393-ccb1d382522d"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "mailbox",
+								"value": "40bf90da-de5b-4f7f-a69a-ed88161d142b"
+							},
+							{
+								"key": "origin",
+								"value": "https://app.centredo.com"
+							},
+							{
+								"key": "referer",
+								"value": "https://app.centredo.com/"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"108\", \"Google Chrome\";v=\"108\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-site"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Svitlana1\",\n    \"lastName\": \"Kozina1\",\n    \"locale\": \"en\",\n    \"timezone\": \"Europe/Prague\",\n    \"phone\": \"+380507752456\",\n    \"autoDepositMailboxUuid\": \"40bf90da-de5b-4f7f-a69a-ed88161d142b\",\n    \"displayExactDate\": true,\n    \"dateLocale\": \"cs_CZ\",\n    \"avatar\": null\n}"
+						},
+						"url": {
+							"raw": "https://api.centredo.com/api/v1/user/profile",
+							"protocol": "https",
+							"host": [
+								"api",
+								"centredo",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
