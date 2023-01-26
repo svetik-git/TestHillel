@@ -1,0 +1,413 @@
+{
+	"info": {
+		"_postman_id": "6762262a-594a-4603-ba89-6717ae4eca38",
+		"name": "qauto2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Garage",
+			"item": [
+				{
+					"name": "Create car",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"pm.environment.set(\"carId\", jsonData.data.id);",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authority",
+								"value": "qauto2.forstudy.space"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "authorization",
+								"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw=="
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "remember_me=2c50c096dbc86281c7d71e50888c2d6527704089ef1d614399d409a627bcd15b; sid=s%3A3olQeLB9stJ2rT4VAOzs7bMN1IERp8b1.pW6QQDbzSje6X66nzhN67mI7AofjFxuI%2Fa2lw%2F%2BaJr0"
+							},
+							{
+								"key": "origin",
+								"value": "https://qauto2.forstudy.space"
+							},
+							{
+								"key": "referer",
+								"value": "https://qauto2.forstudy.space/panel/garage"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"108\", \"Google Chrome\";v=\"108\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"carBrandId\":1,\"carModelId\":1,\"mileage\":60}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cars",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit car",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Check brand_model\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.data.brand).to.eql(\"Audi\");",
+									"    pm.expect(jsonData.data.model).to.eql(\"R8\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authority",
+								"value": "qauto2.forstudy.space"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "authorization",
+								"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw=="
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "remember_me=2c50c096dbc86281c7d71e50888c2d6527704089ef1d614399d409a627bcd15b; sid=s%3A3olQeLB9stJ2rT4VAOzs7bMN1IERp8b1.pW6QQDbzSje6X66nzhN67mI7AofjFxuI%2Fa2lw%2F%2BaJr0"
+							},
+							{
+								"key": "origin",
+								"value": "https://qauto2.forstudy.space"
+							},
+							{
+								"key": "referer",
+								"value": "https://qauto2.forstudy.space/panel/garage"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"108\", \"Google Chrome\";v=\"108\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"carBrandId\": 1,\n    \"carModelId\": 2,\n    \"carCreatedAt\": \"2023-01-17T00:00:00.000Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cars/{{carId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cars",
+								"{{carId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update mileage",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authority",
+								"value": "qauto2.forstudy.space"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "authorization",
+								"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw=="
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "remember_me=2c50c096dbc86281c7d71e50888c2d6527704089ef1d614399d409a627bcd15b; sid=s%3A3olQeLB9stJ2rT4VAOzs7bMN1IERp8b1.pW6QQDbzSje6X66nzhN67mI7AofjFxuI%2Fa2lw%2F%2BaJr0"
+							},
+							{
+								"key": "origin",
+								"value": "https://qauto2.forstudy.space"
+							},
+							{
+								"key": "referer",
+								"value": "https://qauto2.forstudy.space/panel/garage"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"108\", \"Google Chrome\";v=\"108\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mileage\": 70\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cars/{{carId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cars",
+								"{{carId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid mileage",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Impossible to set mileage less than exist\", function () {",
+									"    pm.response.to.have.status(400);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authority",
+								"value": "qauto2.forstudy.space"
+							},
+							{
+								"key": "accept",
+								"value": "application/json, text/plain, */*"
+							},
+							{
+								"key": "accept-language",
+								"value": "en-US,en;q=0.9"
+							},
+							{
+								"key": "authorization",
+								"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw=="
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "remember_me=2c50c096dbc86281c7d71e50888c2d6527704089ef1d614399d409a627bcd15b; sid=s%3A3olQeLB9stJ2rT4VAOzs7bMN1IERp8b1.pW6QQDbzSje6X66nzhN67mI7AofjFxuI%2Fa2lw%2F%2BaJr0"
+							},
+							{
+								"key": "origin",
+								"value": "https://qauto2.forstudy.space"
+							},
+							{
+								"key": "referer",
+								"value": "https://qauto2.forstudy.space/panel/garage"
+							},
+							{
+								"key": "sec-ch-ua",
+								"value": "\"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"108\", \"Google Chrome\";v=\"108\""
+							},
+							{
+								"key": "sec-ch-ua-mobile",
+								"value": "?0"
+							},
+							{
+								"key": "sec-ch-ua-platform",
+								"value": "\"macOS\""
+							},
+							{
+								"key": "sec-fetch-dest",
+								"value": "empty"
+							},
+							{
+								"key": "sec-fetch-mode",
+								"value": "cors"
+							},
+							{
+								"key": "sec-fetch-site",
+								"value": "same-origin"
+							},
+							{
+								"key": "user-agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"mileage\":69}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/cars/{{carId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"cars",
+								"{{carId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
